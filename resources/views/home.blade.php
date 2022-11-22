@@ -18,7 +18,8 @@
 
                 </div>
             </div>
-            <a href="{{ url('/crud') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Go to crud page</a>
+            <br>
+            <a class = "btn btn-info" href="{{ url('/crud') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Go to crud page</a>
         </div>
     </div>
 </div>

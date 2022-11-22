@@ -19,6 +19,11 @@
     <input type="text" name = 'name' class= 'form-control'/>
     <label>Roll:</label>
     <input type='text' name = 'roll' class= 'form-control'>
+    <label>Stream:</label><br>
+    <input type="radio" id="BSc" name="stream" value="BSc Csit">
+    <label for="BSc Csit">BSc Csit</label><br>
+    <input type="radio" id="BCA" name="stream" value="BCA">
+    <label for="BCA">BCA</label><br>
     <button class="btn btn-info mt-4" type="submit">Create</button>
 </form>
 

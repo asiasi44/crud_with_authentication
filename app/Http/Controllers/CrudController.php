@@ -19,35 +19,38 @@ class CrudController extends Controller
     }
 
     public function store(Request $request){
-        $category = new Category;
-        $category->title = $request->title;
-        $category->save();
+        $crud = new Crud;
+        $crud->Name = $request->name;
+        $crud->Stream = $request->stream;
+        $crud->Roll = $request->roll;
+        
+        $crud->save();
         return redirect('/crud');
 
     }
 
     public function edit($id){
-        $category = Crud::where('id',$id)->first(0);
-        return view('categories.edit',['category' => $category]);
+        $crud = Crud::where('id',$id)->first();
+        return view('layouts.edit',compact('crud'));
     }
 
     public function update(Request $request, $id){
-        $category = Crud::where('id',$id)->first();
-        $category->Name = $request->Name;
-        $category->Roll = $request->Roll;
+        $crud = Crud::where('id',$id)->first();
+        $crud->Name = $request->name;
+        $crud->Stream = $request->stream;
+        $crud->Roll = $request->roll;
 
-        $category->save();
+        $crud->save();
 
-        return redirect('/');
+        return redirect('/crud');
 
 
     }
-    public fucntion destroy($id){
-        $category = Crud::whereId($id)->first();
+    public function destroy($id){
+        $crud = Crud::whereId($id)->first();
+        $crud->delete();
 
-        $category->delete();
-
-        return redirect('/');
+        return redirect('/crud');
 
     }
 }

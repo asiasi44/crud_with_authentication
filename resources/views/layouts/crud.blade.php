@@ -10,7 +10,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-
+  <a href = '/home'><img height = '50' src= "/home.png"></a>
 <div class="container">
   <h2>Crud</h2>    
     <h2>
@@ -22,6 +22,7 @@
         <th>S.No.</th>
         <th>Name</th>
         <th>Roll<th>
+        <th>Stream</th>
         <th>Action</th>
       </tr>
     </thead>
@@ -31,9 +32,11 @@
             <td>{{ $loop -> index + 1}}</td>
             <td>{{ $crud -> Name}}</td>
             <td>{{ $crud -> Roll}}</td>
+            <td></td>
+            <td>{{ $crud -> Stream}}</td>
             <td>
-                <a href= "/crud_edit/{{ $category->id}}" class ="btn btn-sm btn-info">Edit</a>
-                <a href= "/crud_delete/{{ $category->id}}" class = "btn btn-sm btn-danger">Delete</a>
+                <a href= "/crud_edit/{{$crud->id}}" class ="btn btn-sm btn-info">Edit</a>
+                <a href="/crud_delete/{{$crud->id}}" class ='btn btn-sm btn-danger'>Delete</a>
             <td>
         @endforeach
     </tbody>
